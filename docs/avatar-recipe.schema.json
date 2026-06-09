@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://snap-motion.local/schemas/avatar-recipe.schema.json",
+  "title": "AvatarRecipe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "avatar_id",
+    "rig",
+    "face",
+    "skin",
+    "eyes",
+    "brows",
+    "nose",
+    "mouth",
+    "hair",
+    "accessories",
+    "materials"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "avatar_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "rig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["template_id", "morph_calibration"],
+      "properties": {
+        "template_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "morph_calibration": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3
+          }
+        }
+      }
+    },
+    "face": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "roundness", "jaw_width", "cheek_fullness"],
+      "properties": {
+        "shape": {
+          "type": "string",
+          "enum": ["round", "oval", "heart", "square", "long"]
+        },
+        "roundness": {
+          "$ref": "#/$defs/normalized"
+        },
+        "jaw_width": {
+          "$ref": "#/$defs/normalized"
+        },
+        "cheek_fullness": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "skin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tone_hex", "warmth", "roughness"],
+      "properties": {
+        "tone_hex": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "warmth": {
+          "$ref": "#/$defs/normalized"
+        },
+        "roughness": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "eyes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "color_hex", "size", "spacing"],
+      "properties": {
+        "shape": {
+          "type": "string",
+          "enum": ["almond", "round", "monolid", "hooded", "upturned", "downturned"]
+        },
+        "color_hex": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "size": {
+          "$ref": "#/$defs/normalized"
+        },
+        "spacing": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "brows": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["shape", "color_hex", "thickness"],
+      "properties": {
+        "shape": {
+          "type": "string",
+          "enum": ["soft_arch", "straight", "rounded", "angled"]
+        },
+        "color_hex": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "thickness": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "nose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "width", "length"],
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["button", "straight", "soft", "defined"]
+        },
+        "width": {
+          "$ref": "#/$defs/normalized"
+        },
+        "length": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "mouth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "width", "fullness"],
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["soft_smile", "small", "wide", "full"]
+        },
+        "width": {
+          "$ref": "#/$defs/normalized"
+        },
+        "fullness": {
+          "$ref": "#/$defs/normalized"
+        }
+      }
+    },
+    "hair": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["style", "color_hex"],
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": ["short", "bob", "long", "curly", "wavy", "buzz", "bald", "ponytail"]
+        },
+        "color_hex": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "facial_hair": {
+          "type": "string",
+          "enum": ["none", "stubble", "mustache", "beard"]
+        }
+      }
+    },
+    "accessories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "style"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["glasses", "earrings", "hat"]
+          },
+          "style": {
+            "type": "string"
+          },
+          "color_hex": {
+            "$ref": "#/$defs/hexColor"
+          }
+        }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["skin_texture_url", "hair_texture_url", "extra_texture_urls"],
+      "properties": {
+        "skin_texture_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "hair_texture_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "extra_texture_urls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "normalized": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    }
+  }
+}

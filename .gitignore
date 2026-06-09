@@ -1,0 +1,20 @@
+node_modules/
+.next/
+apps/web/.next/
+apps/web/tsconfig.tsbuildinfo
+.env
+.env.*
+!.env.example
+!apps/web/.env.example
+.DS_Store
+
+# Xcode / iOS
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
