@@ -7,7 +7,7 @@ struct APIClient {
     var jsonEncoder: JSONEncoder
 
     init(
-        baseURL: URL = URL(string: "https://api.snap-motion.local")!,
+        baseURL: URL = .snapMotionAPIBaseURL,
         urlSession: URLSession = .shared
     ) {
         self.baseURL = baseURL
@@ -47,6 +47,14 @@ struct APIClient {
         return request
     }
 
+    static func generation(baseURL: URL = .snapMotionAPIBaseURL) -> APIClient {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 20
+        configuration.timeoutIntervalForResource = 180
+        configuration.waitsForConnectivity = true
+        return APIClient(baseURL: baseURL, urlSession: URLSession(configuration: configuration))
+    }
+
     private func validate(response: URLResponse, data: Data) throws {
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIClientError.invalidResponse
@@ -55,6 +63,15 @@ struct APIClient {
         guard (200..<300).contains(httpResponse.statusCode) else {
             throw APIClientError.httpStatus(httpResponse.statusCode, data)
         }
+    }
+}
+
+private extension URL {
+    static var snapMotionAPIBaseURL: URL {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.snap-motion.local"
+        return components.url ?? URL(fileURLWithPath: "/")
     }
 }
 

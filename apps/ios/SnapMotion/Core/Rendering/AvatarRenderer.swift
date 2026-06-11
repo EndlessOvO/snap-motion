@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 protocol AvatarRenderer: AnyObject {
     func load(recipe: AvatarRecipe) async throws
     func apply(expression: AvatarExpressionFrame)

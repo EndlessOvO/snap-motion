@@ -1,10 +1,11 @@
 # Avatar Assets
 
-Expected first-version asset:
+Included first-version demo asset:
 
 - `CuteAvatarTemplate.scn`
+- `CuteAvatarTemplate.dae` source used to generate the SceneKit asset
 
-Expected rig morph targets:
+The demo rig exposes these morph targets:
 
 - `blink_L`
 - `blink_R`
@@ -19,3 +20,5 @@ Expected rig morph targets:
 - `cheek_squint_R`
 
 Keep template assets deterministic and versioned. The backend should reference the selected template through `AvatarRecipe.rig.template_id`.
+
+The included rig is intentionally minimal and is suitable for local preview, target validation, and regression testing. Replace it with a production-quality character rig before release.

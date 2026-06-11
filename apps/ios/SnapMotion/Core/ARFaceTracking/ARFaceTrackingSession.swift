@@ -1,4 +1,5 @@
 import ARKit
+import CoreImage
 import Foundation
 
 @MainActor
@@ -13,8 +14,12 @@ final class ARFaceTrackingSession: NSObject, ObservableObject {
         session.delegate = self
     }
 
-    var isSupported: Bool {
+    static var isFaceTrackingSupported: Bool {
         ARFaceTrackingConfiguration.isSupported
+    }
+
+    var isSupported: Bool {
+        Self.isFaceTrackingSupported
     }
 
     func start() {
@@ -47,8 +52,9 @@ extension ARFaceTrackingSession: ARSessionDelegate {
         )
 
         let transform = faceAnchor.transform
-        let timestamp = session.currentFrame?.timestamp ?? Date().timeIntervalSince1970
-        let lightEstimate = session.currentFrame?.lightEstimate?.ambientIntensity
+        let currentFrame = session.currentFrame
+        let timestamp = currentFrame?.timestamp ?? Date().timeIntervalSince1970
+        let lightEstimate = currentFrame?.lightEstimate.map { Double($0.ambientIntensity) }
 
         Task { @MainActor in
             latestFrame = FaceTrackingFrame(
@@ -70,5 +76,34 @@ extension ARFaceTrackingSession: ARSessionDelegate {
 private extension Double {
     func clamped(to range: ClosedRange<Double>) -> Double {
         min(max(self, range.lowerBound), range.upperBound)
+    }
+}
+
+extension ARFaceTrackingSession {
+    func captureCurrentFrameImage(slot: CaptureSlot) throws -> CapturedImageSample {
+        guard let frame = session.currentFrame else {
+            throw ARFaceTrackingSessionError.missingCurrentFrame
+        }
+
+        let image = CIImage(cvPixelBuffer: frame.capturedImage)
+        let sharpness = ImageSharpnessEvaluator().score(ciImage: image)
+        let url = try CaptureFrameImageWriter().writeJPEG(ciImage: image, slot: slot, timestamp: frame.timestamp)
+        return CapturedImageSample(localURL: url, sharpness: sharpness)
+    }
+}
+
+struct CapturedImageSample {
+    let localURL: URL
+    let sharpness: Double
+}
+
+enum ARFaceTrackingSessionError: Error, LocalizedError {
+    case missingCurrentFrame
+
+    var errorDescription: String? {
+        switch self {
+        case .missingCurrentFrame:
+            return "No camera frame is available yet."
+        }
     }
 }

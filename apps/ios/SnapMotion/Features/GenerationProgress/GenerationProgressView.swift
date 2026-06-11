@@ -30,13 +30,18 @@ struct GenerationProgressView: View {
 
             SnapPrimaryButton(title: "Preview Fixture") {
                 viewModel.useFixture()
-                if let recipe = viewModel.recipe {
-                    onCompleted(recipe)
-                }
             }
             .padding(.horizontal, 28)
             .padding(.bottom, 24)
         }
         .background(SnapColors.background.ignoresSafeArea())
+        .task {
+            await viewModel.start()
+        }
+        .onChange(of: viewModel.recipe) { _, recipe in
+            if let recipe {
+                onCompleted(recipe)
+            }
+        }
     }
 }

@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B00000000000000000000001 /* Resources/AvatarAssets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = C00000000000000000000003 /* Resources/AvatarAssets.scnassets */; };
+		B10000000000000000000001 /* App/AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000001 /* App/AppRouter.swift */; };
+		B10000000000000000000002 /* App/SnapMotionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000002 /* App/SnapMotionApp.swift */; };
+		B10000000000000000000003 /* Core/ARFaceTracking/ARFaceCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000003 /* Core/ARFaceTracking/ARFaceCameraView.swift */; };
+		B10000000000000000000004 /* Core/ARFaceTracking/ARFaceTrackingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000004 /* Core/ARFaceTracking/ARFaceTrackingSession.swift */; };
+		B10000000000000000000005 /* Core/ARFaceTracking/FaceBlendShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000005 /* Core/ARFaceTracking/FaceBlendShape.swift */; };
+		B10000000000000000000006 /* Core/ARFaceTracking/FacePoseEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000006 /* Core/ARFaceTracking/FacePoseEstimator.swift */; };
+		B10000000000000000000007 /* Core/Camera/CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000007 /* Core/Camera/CameraPermissionService.swift */; };
+		B10000000000000000000008 /* Core/Camera/DeviceInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000008 /* Core/Camera/DeviceInfoProvider.swift */; };
+		B10000000000000000000009 /* Core/DesignSystem/Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000009 /* Core/DesignSystem/Colors.swift */; };
+		B1000000000000000000000A /* Core/DesignSystem/Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000A /* Core/DesignSystem/Components.swift */; };
+		B1000000000000000000000B /* Core/DesignSystem/Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000B /* Core/DesignSystem/Typography.swift */; };
+		B1000000000000000000000C /* Core/FaceQuality/CaptureFrameImageWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000C /* Core/FaceQuality/CaptureFrameImageWriter.swift */; };
+		B1000000000000000000000D /* Core/FaceQuality/CaptureFrameSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000D /* Core/FaceQuality/CaptureFrameSelector.swift */; };
+		B1000000000000000000000E /* Core/FaceQuality/FaceQualityEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000E /* Core/FaceQuality/FaceQualityEvaluator.swift */; };
+		B1000000000000000000000F /* Core/FaceQuality/ImageSharpnessEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000000F /* Core/FaceQuality/ImageSharpnessEvaluator.swift */; };
+		B10000000000000000000010 /* Core/FaceQuality/LightingEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000010 /* Core/FaceQuality/LightingEvaluator.swift */; };
+		B10000000000000000000011 /* Core/LocalStorage/AvatarCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000011 /* Core/LocalStorage/AvatarCache.swift */; };
+		B10000000000000000000012 /* Core/LocalStorage/AvatarAssetCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000012 /* Core/LocalStorage/AvatarAssetCache.swift */; };
+		B10000000000000000000013 /* Core/Networking/APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000013 /* Core/Networking/APIClient.swift */; };
+		B10000000000000000000014 /* Core/Networking/AvatarJobClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000014 /* Core/Networking/AvatarJobClient.swift */; };
+		B10000000000000000000015 /* Core/Networking/UploadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000015 /* Core/Networking/UploadClient.swift */; };
+		B10000000000000000000016 /* Core/Rendering/AvatarExpressionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000016 /* Core/Rendering/AvatarExpressionMapper.swift */; };
+		B10000000000000000000017 /* Core/Rendering/AvatarProceduralRigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000017 /* Core/Rendering/AvatarProceduralRigFactory.swift */; };
+		B10000000000000000000018 /* Core/Rendering/AvatarRecipeStyleApplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000018 /* Core/Rendering/AvatarRecipeStyleApplier.swift */; };
+		B10000000000000000000019 /* Core/Rendering/AvatarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000019 /* Core/Rendering/AvatarRenderer.swift */; };
+		B1000000000000000000001A /* Core/Rendering/AvatarRigLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001A /* Core/Rendering/AvatarRigLoader.swift */; };
+		B1000000000000000000001B /* Core/Rendering/SceneKitAvatarRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001B /* Core/Rendering/SceneKitAvatarRenderer.swift */; };
+		B1000000000000000000001C /* Domain/AvatarJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001C /* Domain/AvatarJob.swift */; };
+		B1000000000000000000001D /* Domain/AvatarRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001D /* Domain/AvatarRecipe.swift */; };
+		B1000000000000000000001E /* Domain/CaptureManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001E /* Domain/CaptureManifest.swift */; };
+		B1000000000000000000001F /* Domain/FaceTrackingFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000001F /* Domain/FaceTrackingFrame.swift */; };
+		B10000000000000000000020 /* Features/AvatarPreview/AvatarPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000020 /* Features/AvatarPreview/AvatarPreviewView.swift */; };
+		B10000000000000000000021 /* Features/AvatarPreview/AvatarPreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000021 /* Features/AvatarPreview/AvatarPreviewViewModel.swift */; };
+		B10000000000000000000022 /* Features/FaceEnrollment/EnrollmentGuideOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000022 /* Features/FaceEnrollment/EnrollmentGuideOverlay.swift */; };
+		B10000000000000000000023 /* Features/FaceEnrollment/FaceEnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000023 /* Features/FaceEnrollment/FaceEnrollmentView.swift */; };
+		B10000000000000000000024 /* Features/FaceEnrollment/FaceEnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000024 /* Features/FaceEnrollment/FaceEnrollmentViewModel.swift */; };
+		B10000000000000000000025 /* Features/GenerationProgress/GenerationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000025 /* Features/GenerationProgress/GenerationProgressView.swift */; };
+		B10000000000000000000026 /* Features/GenerationProgress/GenerationProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000026 /* Features/GenerationProgress/GenerationProgressViewModel.swift */; };
+		B10000000000000000000027 /* Core/LocalStorage/DeviceIdentityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000027 /* Core/LocalStorage/DeviceIdentityStore.swift */; };
+		B10000000000000000000028 /* App/UITestLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000028 /* App/UITestLaunchConfiguration.swift */; };
+		B10000000000000000000029 /* App/AgeGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000029 /* App/AgeGateView.swift */; };
+		B1000000000000000000002A /* Core/Generation/LocalAvatarRecipeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1000000000000000000002A /* Core/Generation/LocalAvatarRecipeFactory.swift */; };
+		B20000000000000000000001 /* AvatarRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000001 /* AvatarRecipeTests.swift */; };
+		B20000000000000000000002 /* AvatarJobStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000002 /* AvatarJobStatusTests.swift */; };
+		B20000000000000000000003 /* AvatarExpressionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000003 /* AvatarExpressionMapperTests.swift */; };
+		B20000000000000000000004 /* CaptureFrameSelectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000004 /* CaptureFrameSelectorTests.swift */; };
+		B20000000000000000000005 /* FaceQualityEvaluatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000005 /* FaceQualityEvaluatorTests.swift */; };
+		B20000000000000000000006 /* AvatarProceduralRigFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000006 /* AvatarProceduralRigFactoryTests.swift */; };
+		B20000000000000000000007 /* FaceEnrollmentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000007 /* FaceEnrollmentViewModelTests.swift */; };
+		B20000000000000000000008 /* GenerationProgressViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000008 /* GenerationProgressViewModelTests.swift */; };
+		B20000000000000000000009 /* LocalAvatarRecipeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20000000000000000000009 /* LocalAvatarRecipeFactoryTests.swift */; };
+		B30000000000000000000001 /* SnapMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30000000000000000000001 /* SnapMotionUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A00000000000000000000029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000006;
+			remoteInfo = SnapMotion;
+		};
+		A00000000000000000000038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000006;
+			remoteInfo = SnapMotion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C00000000000000000000001 /* SnapMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00000000000000000000002 /* SnapMotionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapMotionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00000000000000000000003 /* Resources/AvatarAssets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Resources/AvatarAssets.scnassets; sourceTree = "<group>"; };
+		C00000000000000000000004 /* Supporting/Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Supporting/Info.plist; sourceTree = "<group>"; };
+		C00000000000000000000005 /* SnapMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C10000000000000000000001 /* App/AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/AppRouter.swift; sourceTree = "<group>"; };
+		C10000000000000000000002 /* App/SnapMotionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/SnapMotionApp.swift; sourceTree = "<group>"; };
+		C10000000000000000000003 /* Core/ARFaceTracking/ARFaceCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/ARFaceTracking/ARFaceCameraView.swift; sourceTree = "<group>"; };
+		C10000000000000000000004 /* Core/ARFaceTracking/ARFaceTrackingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/ARFaceTracking/ARFaceTrackingSession.swift; sourceTree = "<group>"; };
+		C10000000000000000000005 /* Core/ARFaceTracking/FaceBlendShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/ARFaceTracking/FaceBlendShape.swift; sourceTree = "<group>"; };
+		C10000000000000000000006 /* Core/ARFaceTracking/FacePoseEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/ARFaceTracking/FacePoseEstimator.swift; sourceTree = "<group>"; };
+		C10000000000000000000007 /* Core/Camera/CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Camera/CameraPermissionService.swift; sourceTree = "<group>"; };
+		C10000000000000000000008 /* Core/Camera/DeviceInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Camera/DeviceInfoProvider.swift; sourceTree = "<group>"; };
+		C10000000000000000000009 /* Core/DesignSystem/Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/DesignSystem/Colors.swift; sourceTree = "<group>"; };
+		C1000000000000000000000A /* Core/DesignSystem/Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/DesignSystem/Components.swift; sourceTree = "<group>"; };
+		C1000000000000000000000B /* Core/DesignSystem/Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/DesignSystem/Typography.swift; sourceTree = "<group>"; };
+		C1000000000000000000000C /* Core/FaceQuality/CaptureFrameImageWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/FaceQuality/CaptureFrameImageWriter.swift; sourceTree = "<group>"; };
+		C1000000000000000000000D /* Core/FaceQuality/CaptureFrameSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/FaceQuality/CaptureFrameSelector.swift; sourceTree = "<group>"; };
+		C1000000000000000000000E /* Core/FaceQuality/FaceQualityEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/FaceQuality/FaceQualityEvaluator.swift; sourceTree = "<group>"; };
+		C1000000000000000000000F /* Core/FaceQuality/ImageSharpnessEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/FaceQuality/ImageSharpnessEvaluator.swift; sourceTree = "<group>"; };
+		C10000000000000000000010 /* Core/FaceQuality/LightingEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/FaceQuality/LightingEvaluator.swift; sourceTree = "<group>"; };
+		C10000000000000000000011 /* Core/LocalStorage/AvatarCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/LocalStorage/AvatarCache.swift; sourceTree = "<group>"; };
+		C10000000000000000000012 /* Core/LocalStorage/AvatarAssetCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/LocalStorage/AvatarAssetCache.swift; sourceTree = "<group>"; };
+		C10000000000000000000013 /* Core/Networking/APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Networking/APIClient.swift; sourceTree = "<group>"; };
+		C10000000000000000000014 /* Core/Networking/AvatarJobClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Networking/AvatarJobClient.swift; sourceTree = "<group>"; };
+		C10000000000000000000015 /* Core/Networking/UploadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Networking/UploadClient.swift; sourceTree = "<group>"; };
+		C10000000000000000000016 /* Core/Rendering/AvatarExpressionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/AvatarExpressionMapper.swift; sourceTree = "<group>"; };
+		C10000000000000000000017 /* Core/Rendering/AvatarProceduralRigFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/AvatarProceduralRigFactory.swift; sourceTree = "<group>"; };
+		C10000000000000000000018 /* Core/Rendering/AvatarRecipeStyleApplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/AvatarRecipeStyleApplier.swift; sourceTree = "<group>"; };
+		C10000000000000000000019 /* Core/Rendering/AvatarRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/AvatarRenderer.swift; sourceTree = "<group>"; };
+		C1000000000000000000001A /* Core/Rendering/AvatarRigLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/AvatarRigLoader.swift; sourceTree = "<group>"; };
+		C1000000000000000000001B /* Core/Rendering/SceneKitAvatarRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Rendering/SceneKitAvatarRenderer.swift; sourceTree = "<group>"; };
+		C1000000000000000000001C /* Domain/AvatarJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain/AvatarJob.swift; sourceTree = "<group>"; };
+		C1000000000000000000001D /* Domain/AvatarRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain/AvatarRecipe.swift; sourceTree = "<group>"; };
+		C1000000000000000000001E /* Domain/CaptureManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain/CaptureManifest.swift; sourceTree = "<group>"; };
+		C1000000000000000000001F /* Domain/FaceTrackingFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Domain/FaceTrackingFrame.swift; sourceTree = "<group>"; };
+		C10000000000000000000020 /* Features/AvatarPreview/AvatarPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/AvatarPreview/AvatarPreviewView.swift; sourceTree = "<group>"; };
+		C10000000000000000000021 /* Features/AvatarPreview/AvatarPreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/AvatarPreview/AvatarPreviewViewModel.swift; sourceTree = "<group>"; };
+		C10000000000000000000022 /* Features/FaceEnrollment/EnrollmentGuideOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/FaceEnrollment/EnrollmentGuideOverlay.swift; sourceTree = "<group>"; };
+		C10000000000000000000023 /* Features/FaceEnrollment/FaceEnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/FaceEnrollment/FaceEnrollmentView.swift; sourceTree = "<group>"; };
+		C10000000000000000000024 /* Features/FaceEnrollment/FaceEnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/FaceEnrollment/FaceEnrollmentViewModel.swift; sourceTree = "<group>"; };
+		C10000000000000000000025 /* Features/GenerationProgress/GenerationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/GenerationProgress/GenerationProgressView.swift; sourceTree = "<group>"; };
+		C10000000000000000000026 /* Features/GenerationProgress/GenerationProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/GenerationProgress/GenerationProgressViewModel.swift; sourceTree = "<group>"; };
+		C10000000000000000000027 /* Core/LocalStorage/DeviceIdentityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/LocalStorage/DeviceIdentityStore.swift; sourceTree = "<group>"; };
+		C10000000000000000000028 /* App/UITestLaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/UITestLaunchConfiguration.swift; sourceTree = "<group>"; };
+		C10000000000000000000029 /* App/AgeGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/AgeGateView.swift; sourceTree = "<group>"; };
+		C1000000000000000000002A /* Core/Generation/LocalAvatarRecipeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Generation/LocalAvatarRecipeFactory.swift; sourceTree = "<group>"; };
+		C20000000000000000000001 /* AvatarRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRecipeTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000002 /* AvatarJobStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarJobStatusTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000003 /* AvatarExpressionMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarExpressionMapperTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000004 /* CaptureFrameSelectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureFrameSelectorTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000005 /* FaceQualityEvaluatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceQualityEvaluatorTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000006 /* AvatarProceduralRigFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarProceduralRigFactoryTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000007 /* FaceEnrollmentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceEnrollmentViewModelTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000008 /* GenerationProgressViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationProgressViewModelTests.swift; sourceTree = "<group>"; };
+		C20000000000000000000009 /* LocalAvatarRecipeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAvatarRecipeFactoryTests.swift; sourceTree = "<group>"; };
+		C30000000000000000000001 /* SnapMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapMotionUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0000000000000000000000A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0000000000000000000000D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000031 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000004 /* SnapMotion */,
+				A00000000000000000000005 /* SnapMotionTests */,
+				A00000000000000000000030 /* SnapMotionUITests */,
+				A00000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C00000000000000000000001 /* SnapMotion.app */,
+				C00000000000000000000002 /* SnapMotionTests.xctest */,
+				C00000000000000000000005 /* SnapMotionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000004 /* SnapMotion */ = {
+			isa = PBXGroup;
+			children = (
+				C10000000000000000000001 /* App/AppRouter.swift */,
+				C10000000000000000000002 /* App/SnapMotionApp.swift */,
+				C10000000000000000000029 /* App/AgeGateView.swift */,
+				C10000000000000000000028 /* App/UITestLaunchConfiguration.swift */,
+				C10000000000000000000003 /* Core/ARFaceTracking/ARFaceCameraView.swift */,
+				C10000000000000000000004 /* Core/ARFaceTracking/ARFaceTrackingSession.swift */,
+				C10000000000000000000005 /* Core/ARFaceTracking/FaceBlendShape.swift */,
+				C10000000000000000000006 /* Core/ARFaceTracking/FacePoseEstimator.swift */,
+				C10000000000000000000007 /* Core/Camera/CameraPermissionService.swift */,
+				C10000000000000000000008 /* Core/Camera/DeviceInfoProvider.swift */,
+				C10000000000000000000009 /* Core/DesignSystem/Colors.swift */,
+				C1000000000000000000000A /* Core/DesignSystem/Components.swift */,
+				C1000000000000000000000B /* Core/DesignSystem/Typography.swift */,
+				C1000000000000000000000C /* Core/FaceQuality/CaptureFrameImageWriter.swift */,
+				C1000000000000000000000D /* Core/FaceQuality/CaptureFrameSelector.swift */,
+				C1000000000000000000000E /* Core/FaceQuality/FaceQualityEvaluator.swift */,
+				C1000000000000000000000F /* Core/FaceQuality/ImageSharpnessEvaluator.swift */,
+				C10000000000000000000010 /* Core/FaceQuality/LightingEvaluator.swift */,
+				C1000000000000000000002A /* Core/Generation/LocalAvatarRecipeFactory.swift */,
+				C10000000000000000000011 /* Core/LocalStorage/AvatarCache.swift */,
+				C10000000000000000000012 /* Core/LocalStorage/AvatarAssetCache.swift */,
+				C10000000000000000000027 /* Core/LocalStorage/DeviceIdentityStore.swift */,
+				C10000000000000000000013 /* Core/Networking/APIClient.swift */,
+				C10000000000000000000014 /* Core/Networking/AvatarJobClient.swift */,
+				C10000000000000000000015 /* Core/Networking/UploadClient.swift */,
+				C10000000000000000000016 /* Core/Rendering/AvatarExpressionMapper.swift */,
+				C10000000000000000000017 /* Core/Rendering/AvatarProceduralRigFactory.swift */,
+				C10000000000000000000018 /* Core/Rendering/AvatarRecipeStyleApplier.swift */,
+				C10000000000000000000019 /* Core/Rendering/AvatarRenderer.swift */,
+				C1000000000000000000001A /* Core/Rendering/AvatarRigLoader.swift */,
+				C1000000000000000000001B /* Core/Rendering/SceneKitAvatarRenderer.swift */,
+				C1000000000000000000001C /* Domain/AvatarJob.swift */,
+				C1000000000000000000001D /* Domain/AvatarRecipe.swift */,
+				C1000000000000000000001E /* Domain/CaptureManifest.swift */,
+				C1000000000000000000001F /* Domain/FaceTrackingFrame.swift */,
+				C10000000000000000000020 /* Features/AvatarPreview/AvatarPreviewView.swift */,
+				C10000000000000000000021 /* Features/AvatarPreview/AvatarPreviewViewModel.swift */,
+				C10000000000000000000022 /* Features/FaceEnrollment/EnrollmentGuideOverlay.swift */,
+				C10000000000000000000023 /* Features/FaceEnrollment/FaceEnrollmentView.swift */,
+				C10000000000000000000024 /* Features/FaceEnrollment/FaceEnrollmentViewModel.swift */,
+				C10000000000000000000025 /* Features/GenerationProgress/GenerationProgressView.swift */,
+				C10000000000000000000026 /* Features/GenerationProgress/GenerationProgressViewModel.swift */,
+				C00000000000000000000003 /* Resources/AvatarAssets.scnassets */,
+				C00000000000000000000004 /* Supporting/Info.plist */,
+			);
+			path = SnapMotion;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000005 /* SnapMotionTests */ = {
+			isa = PBXGroup;
+			children = (
+				C20000000000000000000001 /* AvatarRecipeTests.swift */,
+				C20000000000000000000002 /* AvatarJobStatusTests.swift */,
+				C20000000000000000000003 /* AvatarExpressionMapperTests.swift */,
+				C20000000000000000000004 /* CaptureFrameSelectorTests.swift */,
+				C20000000000000000000005 /* FaceQualityEvaluatorTests.swift */,
+				C20000000000000000000006 /* AvatarProceduralRigFactoryTests.swift */,
+				C20000000000000000000007 /* FaceEnrollmentViewModelTests.swift */,
+				C20000000000000000000008 /* GenerationProgressViewModelTests.swift */,
+				C20000000000000000000009 /* LocalAvatarRecipeFactoryTests.swift */,
+			);
+			path = SnapMotionTests;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000030 /* SnapMotionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C30000000000000000000001 /* SnapMotionUITests.swift */,
+			);
+			path = SnapMotionUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000006 /* SnapMotion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000025 /* Build configuration list for PBXNativeTarget "SnapMotion" */;
+			buildPhases = (
+				A00000000000000000000008 /* Sources */,
+				A0000000000000000000000A /* Frameworks */,
+				A00000000000000000000009 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapMotion;
+			productName = SnapMotion;
+			productReference = C00000000000000000000001 /* SnapMotion.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000000000000000000007 /* SnapMotionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000028 /* Build configuration list for PBXNativeTarget "SnapMotionTests" */;
+			buildPhases = (
+				A0000000000000000000000B /* Sources */,
+				A0000000000000000000000D /* Frameworks */,
+				A0000000000000000000000C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0000000000000000000002A /* PBXTargetDependency */,
+			);
+			name = SnapMotionTests;
+			productName = SnapMotionTests;
+			productReference = C00000000000000000000002 /* SnapMotionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A00000000000000000000032 /* SnapMotionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000036 /* Build configuration list for PBXNativeTarget "SnapMotionUITests" */;
+			buildPhases = (
+				A00000000000000000000033 /* Sources */,
+				A00000000000000000000031 /* Frameworks */,
+				A00000000000000000000034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000000000000000000037 /* PBXTargetDependency */,
+			);
+			name = SnapMotionUITests;
+			productName = SnapMotionUITests;
+			productReference = C00000000000000000000005 /* SnapMotionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1640;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					A00000000000000000000006 = {
+						CreatedOnToolsVersion = 16.4;
+						ProvisioningStyle = Automatic;
+					};
+					A00000000000000000000007 = {
+						CreatedOnToolsVersion = 16.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A00000000000000000000006;
+					};
+					A00000000000000000000032 = {
+						CreatedOnToolsVersion = 16.4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A00000000000000000000006;
+					};
+				};
+			};
+			buildConfigurationList = A00000000000000000000022 /* Build configuration list for PBXProject "SnapMotion" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00000000000000000000002;
+			productRefGroup = A00000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000000000000000000006 /* SnapMotion */,
+				A00000000000000000000007 /* SnapMotionTests */,
+				A00000000000000000000032 /* SnapMotionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00000000000000000000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B00000000000000000000001 /* Resources/AvatarAssets.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0000000000000000000000C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000000000000000000008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000000000000000000001 /* App/AppRouter.swift in Sources */,
+				B10000000000000000000002 /* App/SnapMotionApp.swift in Sources */,
+				B10000000000000000000029 /* App/AgeGateView.swift in Sources */,
+				B10000000000000000000003 /* Core/ARFaceTracking/ARFaceCameraView.swift in Sources */,
+				B10000000000000000000004 /* Core/ARFaceTracking/ARFaceTrackingSession.swift in Sources */,
+				B10000000000000000000005 /* Core/ARFaceTracking/FaceBlendShape.swift in Sources */,
+				B10000000000000000000006 /* Core/ARFaceTracking/FacePoseEstimator.swift in Sources */,
+				B10000000000000000000007 /* Core/Camera/CameraPermissionService.swift in Sources */,
+				B10000000000000000000008 /* Core/Camera/DeviceInfoProvider.swift in Sources */,
+				B10000000000000000000009 /* Core/DesignSystem/Colors.swift in Sources */,
+				B1000000000000000000000A /* Core/DesignSystem/Components.swift in Sources */,
+				B1000000000000000000000B /* Core/DesignSystem/Typography.swift in Sources */,
+				B1000000000000000000000C /* Core/FaceQuality/CaptureFrameImageWriter.swift in Sources */,
+				B1000000000000000000000D /* Core/FaceQuality/CaptureFrameSelector.swift in Sources */,
+				B1000000000000000000000E /* Core/FaceQuality/FaceQualityEvaluator.swift in Sources */,
+				B1000000000000000000000F /* Core/FaceQuality/ImageSharpnessEvaluator.swift in Sources */,
+				B10000000000000000000010 /* Core/FaceQuality/LightingEvaluator.swift in Sources */,
+				B1000000000000000000002A /* Core/Generation/LocalAvatarRecipeFactory.swift in Sources */,
+				B10000000000000000000011 /* Core/LocalStorage/AvatarCache.swift in Sources */,
+				B10000000000000000000012 /* Core/LocalStorage/AvatarAssetCache.swift in Sources */,
+				B10000000000000000000027 /* Core/LocalStorage/DeviceIdentityStore.swift in Sources */,
+				B10000000000000000000013 /* Core/Networking/APIClient.swift in Sources */,
+				B10000000000000000000014 /* Core/Networking/AvatarJobClient.swift in Sources */,
+				B10000000000000000000015 /* Core/Networking/UploadClient.swift in Sources */,
+				B10000000000000000000016 /* Core/Rendering/AvatarExpressionMapper.swift in Sources */,
+				B10000000000000000000017 /* Core/Rendering/AvatarProceduralRigFactory.swift in Sources */,
+				B10000000000000000000018 /* Core/Rendering/AvatarRecipeStyleApplier.swift in Sources */,
+				B10000000000000000000019 /* Core/Rendering/AvatarRenderer.swift in Sources */,
+				B1000000000000000000001A /* Core/Rendering/AvatarRigLoader.swift in Sources */,
+				B1000000000000000000001B /* Core/Rendering/SceneKitAvatarRenderer.swift in Sources */,
+				B1000000000000000000001C /* Domain/AvatarJob.swift in Sources */,
+				B1000000000000000000001D /* Domain/AvatarRecipe.swift in Sources */,
+				B1000000000000000000001E /* Domain/CaptureManifest.swift in Sources */,
+				B1000000000000000000001F /* Domain/FaceTrackingFrame.swift in Sources */,
+				B10000000000000000000020 /* Features/AvatarPreview/AvatarPreviewView.swift in Sources */,
+				B10000000000000000000021 /* Features/AvatarPreview/AvatarPreviewViewModel.swift in Sources */,
+				B10000000000000000000022 /* Features/FaceEnrollment/EnrollmentGuideOverlay.swift in Sources */,
+				B10000000000000000000023 /* Features/FaceEnrollment/FaceEnrollmentView.swift in Sources */,
+				B10000000000000000000024 /* Features/FaceEnrollment/FaceEnrollmentViewModel.swift in Sources */,
+				B10000000000000000000025 /* Features/GenerationProgress/GenerationProgressView.swift in Sources */,
+				B10000000000000000000026 /* Features/GenerationProgress/GenerationProgressViewModel.swift in Sources */,
+				B10000000000000000000028 /* App/UITestLaunchConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0000000000000000000000B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B20000000000000000000001 /* AvatarRecipeTests.swift in Sources */,
+				B20000000000000000000002 /* AvatarJobStatusTests.swift in Sources */,
+				B20000000000000000000003 /* AvatarExpressionMapperTests.swift in Sources */,
+				B20000000000000000000004 /* CaptureFrameSelectorTests.swift in Sources */,
+				B20000000000000000000005 /* FaceQualityEvaluatorTests.swift in Sources */,
+				B20000000000000000000006 /* AvatarProceduralRigFactoryTests.swift in Sources */,
+				B20000000000000000000007 /* FaceEnrollmentViewModelTests.swift in Sources */,
+				B20000000000000000000008 /* GenerationProgressViewModelTests.swift in Sources */,
+				B20000000000000000000009 /* LocalAvatarRecipeFactoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30000000000000000000001 /* SnapMotionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0000000000000000000002A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000000000000000000006 /* SnapMotion */;
+			targetProxy = A00000000000000000000029 /* PBXContainerItemProxy */;
+		};
+		A00000000000000000000037 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000000000000000000006 /* SnapMotion */;
+			targetProxy = A00000000000000000000038 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000020 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A00000000000000000000021 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000000000000000000023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SnapMotion/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A00000000000000000000024 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SnapMotion/Supporting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A00000000000000000000026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapMotion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SnapMotion";
+			};
+			name = Debug;
+		};
+		A00000000000000000000027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotionTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SnapMotion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SnapMotion";
+			};
+			name = Release;
+		};
+		A00000000000000000000035 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SnapMotion;
+			};
+			name = Debug;
+		};
+		A00000000000000000000039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G758ATTU5P;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = local.snapmotion.SnapMotionUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = SnapMotion;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000000000000000000022 /* Build configuration list for PBXProject "SnapMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000020 /* Debug */,
+				A00000000000000000000021 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000025 /* Build configuration list for PBXNativeTarget "SnapMotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000023 /* Debug */,
+				A00000000000000000000024 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000028 /* Build configuration list for PBXNativeTarget "SnapMotionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000026 /* Debug */,
+				A00000000000000000000027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000036 /* Build configuration list for PBXNativeTarget "SnapMotionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000035 /* Debug */,
+				A00000000000000000000039 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}

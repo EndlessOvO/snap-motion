@@ -46,7 +46,7 @@ extension CaptureManifest {
     }
 }
 
-enum CaptureSlot: String, Codable, CaseIterable {
+enum CaptureSlot: String, Codable, CaseIterable, Hashable {
     case neutralFront
     case turnLeft
     case turnRight

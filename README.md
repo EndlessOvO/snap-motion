@@ -8,6 +8,58 @@ Snap Motion 是一个 iOS 实时拟我头像项目：用户像录入 Face ID 一
 - [AvatarRecipe JSON Schema](/Users/endlessovo/dev/ai/snap-motion/docs/avatar-recipe.schema.json)
 - [头像生成提示词](/Users/endlessovo/dev/ai/snap-motion/docs/avatar-recipe-generation-prompt.md)
 - [iOS 工程骨架](/Users/endlessovo/dev/ai/snap-motion/apps/ios/SnapMotion)
+- [本地后端服务](/Users/endlessovo/dev/ai/snap-motion/apps/server)
+
+## 本地开发
+
+### iOS
+
+打开 `apps/ios/SnapMotion.xcodeproj`，选择 `SnapMotion` scheme。当前 target 配置为 iPhone / iOS 17，真机 AR 录入和实时预览需要支持 TrueDepth 的设备。
+
+命令行构建需要先在本机接受 Xcode license：
+
+```sh
+sudo xcodebuild -license
+xcodebuild -project apps/ios/SnapMotion.xcodeproj -scheme SnapMotion -destination 'platform=iOS Simulator,name=iPhone 16' test
+```
+
+当前真机调试使用自动签名和本机 Apple Development team。设备重新连接并在 `devicectl` 中显示为 `connected` 后，可用下面的命令复跑真机测试：
+
+```sh
+xcrun devicectl list devices
+xcodebuild -allowProvisioningUpdates -project apps/ios/SnapMotion.xcodeproj -scheme SnapMotion -destination 'platform=iOS,id=00008150-001C24C23A7A401C' -destination-timeout 60 test
+```
+
+如果设备显示为 `unavailable` 或 `xctrace list devices` 显示 Offline，先解锁 iPhone，拔插数据线，尽量直连 Mac 并确认使用的是可传数据线。恢复后应看到 `ddiServicesAvailable: true` 和 `tunnelState: connected`：
+
+```sh
+xcrun devicectl device info details --device 00008150-001C24C23A7A401C | rg 'ddiServicesAvailable|tunnelState|developerModeStatus'
+xcrun xctrace list devices
+```
+
+The repository-level verification script runs the checks that do not require a signed device, then attempts an Xcode build:
+
+```sh
+./scripts/verify.sh
+```
+
+### 后端
+
+本地后端提供头像任务创建、JPEG 上传、上传完成、状态轮询、AvatarRecipe 获取、schema 校验和任务终态后的原始上传删除。没有配置 OpenAI-compatible provider 时，会使用本地 fixture generator，适合跑通端到端链路。
+
+```sh
+cd apps/server
+npm test
+npm start
+```
+
+可选环境变量：
+
+```sh
+OPENAI_COMPATIBLE_BASE_URL=https://api.example.com/v1
+OPENAI_COMPATIBLE_API_KEY=replace-me
+OPENAI_COMPATIBLE_MODEL=your-vision-capable-model
+```
 
 ## 第一版范围
 

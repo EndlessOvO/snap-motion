@@ -222,7 +222,13 @@ extension AvatarRecipe {
                 "blink_R": 1.0,
                 "jaw_open": 1.0,
                 "smile_L": 1.0,
-                "smile_R": 1.0
+                "smile_R": 1.0,
+                "brow_up_L": 1.0,
+                "brow_up_R": 1.0,
+                "mouth_funnel": 1.0,
+                "mouth_pucker": 1.0,
+                "cheek_squint_L": 1.0,
+                "cheek_squint_R": 1.0
             ]
         ),
         face: Face(shape: .round, roundness: 0.72, jawWidth: 0.42, cheekFullness: 0.78),
@@ -231,12 +237,22 @@ extension AvatarRecipe {
         brows: Brows(shape: .softArch, colorHex: "#2B1B12", thickness: 0.58),
         nose: Nose(style: .soft, width: 0.46, length: 0.5),
         mouth: Mouth(style: .softSmile, width: 0.55, fullness: 0.48),
-        hair: Hair(style: .wavy, colorHex: "#24170F", facialHair: .none),
+        hair: Hair(style: .wavy, colorHex: "#24170F", facialHair: FacialHair.none),
         accessories: [],
         materials: Materials(
-            skinTextureURL: URL(string: "https://assets.snap-motion.local/skin-fixture.png")!,
-            hairTextureURL: URL(string: "https://assets.snap-motion.local/hair-fixture.png")!,
+            skinTextureURL: URL.snapMotionAsset(path: "skin-fixture.png"),
+            hairTextureURL: URL.snapMotionAsset(path: "hair-fixture.png"),
             extraTextureURLs: []
         )
     )
+}
+
+private extension URL {
+    static func snapMotionAsset(path: String) -> URL {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "assets.snap-motion.local"
+        components.path = "/\(path)"
+        return components.url ?? URL(fileURLWithPath: "/\(path)")
+    }
 }

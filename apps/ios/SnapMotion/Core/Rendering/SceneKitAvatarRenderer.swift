@@ -4,12 +4,31 @@ import SwiftUI
 @MainActor
 final class SceneKitAvatarRenderer: ObservableObject, AvatarRenderer {
     @Published private(set) var scene: SCNScene?
+    @Published private(set) var loadNotice: String?
 
     private let rigLoader = AvatarRigLoader()
+    private let assetCache = AvatarAssetCache()
     private var morphersByTargetName: [String: SCNMorpher] = [:]
 
     func load(recipe: AvatarRecipe) async throws {
-        let scene = try rigLoader.loadTemplate(named: recipe.rig.templateID)
+        let scene: SCNScene
+        let cachedTextureURLs = await assetCache.prefetch(recipe: recipe)
+
+        if rigLoader.shouldUseProceduralModel(for: recipe.rig.templateID) {
+            scene = AvatarProceduralRigFactory().makeScene(recipe: recipe)
+            loadNotice = nil
+        } else {
+            do {
+                scene = try rigLoader.loadTemplate(named: recipe.rig.templateID)
+                AvatarRecipeGeometryApplier().apply(recipe: recipe, to: scene)
+                loadNotice = nil
+            } catch {
+                scene = AvatarProceduralRigFactory().makeScene(recipe: recipe)
+                loadNotice = "\(error.localizedDescription) Showing the built-in procedural model."
+            }
+        }
+
+        AvatarRecipeStyleApplier().apply(recipe: recipe, cachedTextureURLs: cachedTextureURLs, to: scene)
         self.scene = scene
         self.morphersByTargetName = collectMorphers(in: scene.rootNode)
     }
